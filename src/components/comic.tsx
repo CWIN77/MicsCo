@@ -11,6 +11,7 @@ const Comic = () => {
   // },[])
   return (
     <Container>
+      Home Page
       <ComicImg src={
         //"https://manatoki142.net/data/file/comic/62a2f888e3a67_8DXqy5HM_d8b16836d3f7ca722e18dfc82b91222596c208da.jpg"
         ""
