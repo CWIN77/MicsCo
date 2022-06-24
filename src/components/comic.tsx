@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import {ReactComponent as SVG_star} from "../svgs/star.svg"
 import {ReactComponent as SVG_tag} from "../svgs/tag.svg"
-import {ReactComponent as SVG_eye} from "../svgs/eye.svg"
+import {ReactComponent as SVG_shield} from "../svgs/shield.svg"
 
 const Comic = () => {
   const starIcon = {width:15,height:15,fill:"#ECD92D",style:{padding:4,marginRight:4,filter: "drop-shadow(0px 0px 0.1px rgba(0,0,0,0.2))"}}
@@ -29,8 +29,8 @@ const Comic = () => {
             <h2>드라마</h2>
           </Genre>
           <Genre>
-            <SVG_eye {...InformIcon}/>
-            <h2>12세</h2>
+            <SVG_shield {...InformIcon} />
+            <span/><h2>안전함</h2>
           </Genre>
         </div>
       </Inform>
@@ -102,6 +102,17 @@ const Genre = styled.div`
     color: #1A1A1A;
     opacity: 0.6;
     margin-right: 6px;
+  }
+  span{
+    width:7px;
+    height:7px;
+    margin-right: 6px;
+    margin-top: 2px;
+    border-radius: 100px;
+    background-color: #2fb67e;
+    // 안전 : 2fb67e
+    // 조심 : ecb22d
+    // 위험 : e01e5a
   }
 ` 
 
