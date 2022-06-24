@@ -2,6 +2,8 @@ import styled from 'styled-components'
 import TopBar from '../components/topBar'
 import Comic from '../components/comic'
 
+// micsco.link
+
 const Home = () => {
   return (
     <Container>
