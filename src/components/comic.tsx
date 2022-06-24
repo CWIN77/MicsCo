@@ -10,7 +10,8 @@ const Comic = () => {
   return (
     <Container>
       <ComicImg src={
-        "https://manatoki142.net/data/file/comic/62a2f888e3a67_8DXqy5HM_d8b16836d3f7ca722e18dfc82b91222596c208da.jpg"
+        // "https://i.ibb.co/8XcSDdH/img.png"
+        ""
       } />
       <Inform>
         <div>
@@ -31,10 +32,6 @@ const Comic = () => {
             <SVG_eye {...InformIcon}/>
             <h2>12세</h2>
           </Genre>
-          {/* <Genre>
-            <SVG_publish {...InformIcon}/>
-            <h2>연재중</h2>
-          </Genre> */}
         </div>
       </Inform>
     </Container>
