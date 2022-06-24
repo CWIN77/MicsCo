@@ -9,6 +9,11 @@ const Home = () => {
     <Container>
       <TopBar/>
       <Comic/>
+      <Comic/>
+      <Comic/>
+      <Comic/>
+      <Comic/>
+      <Comic/>
     </Container>
   )
 }

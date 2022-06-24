@@ -10,8 +10,8 @@ const Comic = () => {
   return (
     <Container>
       <ComicImg src={
-        // "https://i.ibb.co/8XcSDdH/img.png"
-        ""
+        "https://i.ibb.co/8XcSDdH/img.png"
+        
       } />
       <Inform>
         <div>
@@ -40,16 +40,17 @@ const Comic = () => {
 
 const Container = styled.div`
   width:calc(100vw - 1.5rem);
-  background-color: white;
+  border-bottom: 1px solid black;
   display:flex;
   margin: 1rem 0px;
   padding:0.75rem;
-  border: 1.5px 0px solid rgba(0, 0, 0, 0.2);
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
 `
 const ComicImg = styled.img`
   border-radius: 6px;
-  width:calc(((100vw - 1.5rem) * 0.4) + 1px);   // 1px 여유 공간
-  height:calc((100vw - 1.5rem) * 0.4 / 7 * 10); // 7:10 비율
+  width:calc(((100vw - 1.5rem) * 0.35) + 1px);   // 1px 여유 공간
+  height:calc((100vw - 1.5rem) * 0.35 / 7 * 10); // 7:10 비율
   margin-right: 10px;
 `
 const Inform = styled.div`
@@ -57,12 +58,12 @@ const Inform = styled.div`
   flex-direction: column;
   justify-content: space-between;
   width:100%;
-  height:calc((100vw - 1.5rem) * 0.4 / 7 * 10);
+  height:calc((100vw - 1.5rem) * 0.35 / 7 * 10);
 `
 const Title = styled.h1`
   font-size: 18px;
-  margin-top: 4.5px;
-  margin-bottom: 4.5px;
+  margin-top: 4px;
+  margin-bottom: 4px;
   max-height:50px;
   line-height: 25px;
   overflow: hidden;
@@ -73,13 +74,13 @@ const Title = styled.h1`
 `
 const Explane = styled.h2`
   font-size: 13px;
-  height:calc(19px * 4);
+  height:calc(19px * 3);
   line-height: 19px;
   overflow: hidden;
   opacity: 0.6;
   font-weight: 400;
   display: -webkit-box;
-  -webkit-line-clamp: 4;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
 `
 const ScoreWrapper = styled.div`
@@ -109,8 +110,9 @@ const Genre = styled.div`
     margin-right: 6px;
     margin-top: 2px;
     border-radius: 100px;
-    background-color: #2fb67e;
+    background-color: #ecb22d;
     // 안전 : 2fb67e
+    // 평범 : 1264a3
     // 조심 : ecb22d
     // 위험 : e01e5a
   }
