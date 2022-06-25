@@ -1,15 +1,28 @@
 import styled from 'styled-components'
 import TopBar from '../components/topBar'
 import Comic from '../components/comic'
+import {API,graphqlOperation} from "aws-amplify"
+import {listComics} from '../graphql/queries'
+import { useEffect, useState } from 'react'
+import {IComicList} from "../types"
 
 const Home = () => {
+  const [comicList,setComicList] = useState<IComicList[] | null>(null)
+  const getComic = async ()=>{
+    const req:any = await API.graphql(graphqlOperation(listComics));
+    setComicList(req.data.listComics.items);
+  }
+  useEffect(()=>{
+    getComic()
+  },[])
   return (
     <Container>
       <TopBar/>
-      <Comic/>
-      <Comic/>
-      <Comic/>
-      <Comic/>
+      {
+        comicList?.map((data,key)=>(
+          <Comic key={key} data={data} />
+        ))
+      }
     </Container>
   )
 }

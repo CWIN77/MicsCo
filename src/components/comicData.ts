@@ -17,7 +17,7 @@ export const safety = [
   }
 ]
 
-export const genre = {
+export const genre:{[key:number]:string} = {
   0:"판타지",
   1:"드라마",
   2:"SF",

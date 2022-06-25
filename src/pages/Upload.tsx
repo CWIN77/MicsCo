@@ -3,11 +3,10 @@ import TopBar from '../components/topBar'
 import { useEffect, useRef, useState } from 'react'
 import imageCompression from 'browser-image-compression';
 import AWS from "aws-sdk"
-
 AWS.config.update({
   region: "ap-northeast-2",
   credentials: new AWS.CognitoIdentityCredentials({
-    IdentityPoolId:process.env.REACT_APP_IDENTITYPOOLID||""
+    IdentityPoolId:process.env.REACT_APP_IDENTITY_POOLID||""
   }),
 })
 
