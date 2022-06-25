@@ -5,7 +5,7 @@ import {API,graphqlOperation} from "aws-amplify"
 import {listComics} from '../graphql/queries'
 import { useEffect, useState } from 'react'
 import {IComicList} from "../types"
-
+//test
 const Home = () => {
   const [comicList,setComicList] = useState<IComicList[] | null>(null)
   const getComic = async ()=>{
