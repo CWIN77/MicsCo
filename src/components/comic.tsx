@@ -12,7 +12,7 @@ const Comic = ({data}:{data:IComicList}) => {
 
   return (
     <Container>
-      <Link to={`/comic/${data.id}`}>
+      <Link to={`/${data.id}`}>
         <ComicImg src={data.img} />
       </Link>
       <Inform>
@@ -24,7 +24,7 @@ const Comic = ({data}:{data:IComicList}) => {
             </ScoreWrapper>
             <Publish style={{backgroundColor:publish[data.publish].color}}>{publish[data.publish].text}</Publish>
           </div>
-          <Link to={`/comic/${data.id}`}>
+          <Link to={`/${data.id}`}>
             <Title>{data.title}</Title>
             <Explane>{data.explane}</Explane>
           </Link>
