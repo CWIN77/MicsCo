@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import {ReactComponent as SVG_star} from "../svgs/star.svg"
 import {ReactComponent as SVG_tag} from "../svgs/tag.svg"
 import {ReactComponent as SVG_shield} from "../svgs/shield.svg"
-import {safety,tag} from "./comicData"
+import {safety,genre} from "./comicData"
 import imageCompression from 'browser-image-compression'
 
 const Comic = () => {
@@ -59,15 +59,15 @@ const Comic = () => {
           <Explane>작품에 대한 설명을 적어 넣을 부분 작품에 대한 설명을 적어 넣을 부분</Explane>
         </div>
         <div>
-          <Genre>
+          <Tag>
             <SVG_tag {...InformIcon}/>
-            <h2>{tag[0]}</h2>
-            <h2>{tag[1]}</h2>
-          </Genre>
-          <Genre>
+            <h2>{genre[0]}</h2>
+            <h2>{genre[1]}</h2>
+          </Tag>
+          <Tag>
             <SVG_shield {...InformIcon} />
             <span style={{backgroundColor:safety[0].color}} /><h2>{safety[0].text}함</h2>
-          </Genre>
+          </Tag>
         </div>
       </Inform>
     </Container>
@@ -128,7 +128,7 @@ const Score = styled.h2`
   color:#ECD92D;
   filter: drop-shadow(0px 0px 0.1px rgba(0,0,0,0.2));
 `
-const Genre = styled.div`
+const Tag = styled.div`
   font-size: 12px;
   display:flex;
   flex-wrap: wrap;

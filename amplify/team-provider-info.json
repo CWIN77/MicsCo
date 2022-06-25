@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-micsco-dev-160454-authRole",
+      "UnauthRoleArn": "arn:aws:iam::825789900535:role/amplify-micsco-dev-160454-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::825789900535:role/amplify-micsco-dev-160454-authRole",
+      "Region": "ap-northeast-2",
+      "DeploymentBucketName": "amplify-micsco-dev-160454-deployment",
+      "UnauthRoleName": "amplify-micsco-dev-160454-unauthRole",
+      "StackName": "amplify-micsco-dev-160454",
+      "StackId": "arn:aws:cloudformation:ap-northeast-2:825789900535:stack/amplify-micsco-dev-160454/1e736800-f455-11ec-8730-0a5ba591b28e",
+      "AmplifyAppId": "d1pzurcza85ipa"
+    }
+  }
+}

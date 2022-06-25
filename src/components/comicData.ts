@@ -17,7 +17,7 @@ export const safety = [
   }
 ]
 
-export const tag = {
+export const genre = {
   0:"판타지",
   1:"드라마",
   2:"SF",

@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "aws-sdk": "^2.1162.0",
     "browser-image-compression": "^2.0.0",
+    "buffer": "^6.0.3",
     "firebase": "^8.6.5",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
@@ -11,7 +13,8 @@
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
     "styled-components": "^5.3.5",
-    "typescript": "^4.6.3"
+    "typescript": "^4.6.3",
+    "util": "^0.12.4"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -43,5 +46,6 @@
     "@types/react-router-dom": "^5.3.3",
     "@types/styled-components": "^5.1.25"
   },
-  "packageManager": "yarn@3.2.1"
+  "packageManager": "yarn@3.2.1",
+  "proxy": "https://amplify-micsco-dev-160454-deployment.s3.amazonaws.com/"
 }

@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "serviceConfiguration": {
+    "apiName": "micsco",
+    "serviceName": "AppSync",
+    "gqlSchemaPath": "C:\\Users\\CWIN\\Desktop\\micsco\\amplify\\backend\\api\\micsco\\schema.graphql",
+    "defaultAuthType": {
+      "mode": "API_KEY",
+      "expirationTime": 7
+    }
+  }
+}
