@@ -13,19 +13,20 @@ const TopBar = () => {
   useEffect(()=>{
     getCurrentUser(setUser,setLoading)
   },[])
-  
+
   return (
     <div>
       <div style={{width:"100%",height:52.16}}/>
       <Bar>
         <Title>MicsCo</Title>
+        <a href='https://github.com/CWIN77'>테스트 버튼</a>
         <div>
           <SVG_search {...svgProps} />
           {
             loading 
             ? <Loading/>
             : user
-              ? <Profile onClick={async()=>{logOut(setLoading)}} src={user.img} />
+              ? <Profile onClick={()=>{logOut(setLoading)}} src={user.img} />
               : <div onClick={()=>{loginGoogle(setLoading)}}>
                 <SVG_profile width={24} height={24} style={{padding:4,marginRight:14}}/>
               </div>
