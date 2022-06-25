@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import TopBar from '../components/topBar'
-import { useEffect, useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import imageCompression from 'browser-image-compression';
 import AWS from "aws-sdk"
 AWS.config.update({
@@ -22,6 +22,7 @@ const getImgName = () => {
 
   const chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz';
   const randChars = `${chars[Math.floor(Math.random() * chars.length)]+chars[Math.floor(Math.random() * chars.length)]+chars[Math.floor(Math.random() * chars.length)]+chars[Math.floor(Math.random() * chars.length)]}`
+  
   return fullDate+randChars
 }
 
@@ -43,7 +44,7 @@ const Upload = () => {
     try{
       const options = {
         maxSizeMb: 1,
-        maxWidthOrHeight: 700,
+        maxWidthOrHeight: 600,
       }
       return await imageCompression(image, options);
     } catch(e){
@@ -77,7 +78,7 @@ const Upload = () => {
       }}>이미지 업로드</button>
       {
         typeof imgSrc === "string" &&
-        <img style={{width:"80vw",height:"auto"}} src={imgSrc}/>
+        <img style={{width:"25vw",height:"auto"}} src={imgSrc}/>
       }
     </Container>
   )

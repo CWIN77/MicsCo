@@ -10,3 +10,11 @@ export interface IComicList {
   readonly createdAt:string;
   readonly updatedAt:string;
 }
+
+export interface IUser {
+  name:string
+  id:string
+  img:string
+} 
+
+export type ISetState<T>= React.Dispatch<React.SetStateAction<T>> 
