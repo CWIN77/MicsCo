@@ -7,14 +7,15 @@ export interface IComicList {
   readonly safety:number;
   readonly genre:number[];
   readonly score:number;
+  readonly publish:number;
   readonly createdAt:string;
   readonly updatedAt:string;
 }
 
 export interface IUser {
-  name:string
-  id:string
-  img:string
+  readonly name:string;
+  readonly id:string;
+  readonly img:string;
 } 
 
 export type ISetState<T>= React.Dispatch<React.SetStateAction<T>> 

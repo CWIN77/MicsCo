@@ -41,14 +41,12 @@ export const getCurrentUser = (setUser:ISetState<IUser | null>,setLoading:ISetSt
     sessionStorage.removeItem("loading")
     if (user) {
       const name = user.displayName;
-      const id = user.uid;
+      const id = user.displayName + "@" + user.uid.substr(0, 4);
       const img = user.photoURL;
       if(name && id && img){
         const userData:IUser = {name,id,img};
-        if(userData !== userStorage){
-          localStorage.setItem("user",JSON.stringify(userData))
-          setUser(userData)
-        }
+        localStorage.setItem("user",JSON.stringify(userData))
+        setUser(userData)
       }
     }
   });

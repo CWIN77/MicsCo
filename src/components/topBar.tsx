@@ -19,7 +19,6 @@ const TopBar = () => {
       <div style={{width:"100%",height:52.16}}/>
       <Bar>
         <Title>MicsCo</Title>
-        <a href='https://github.com/CWIN77'>테스트 버튼</a>
         <div>
           <SVG_search {...svgProps} />
           {

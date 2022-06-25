@@ -2,8 +2,9 @@ import styled from 'styled-components'
 import {ReactComponent as SVG_star} from "../svgs/star.svg"
 import {ReactComponent as SVG_tag} from "../svgs/tag.svg"
 import {ReactComponent as SVG_shield} from "../svgs/shield.svg"
-import {safety,genre} from "./comicData"
+import {safety,genre,publish} from "./comicData"
 import {IComicList} from "../types"
+import { Link } from 'react-router-dom'
 
 const Comic = ({data}:{data:IComicList}) => {
   const starIcon = {width:15,height:15,fill:"#ECD92D",style:{padding:4,marginRight:4,filter: "drop-shadow(0px 0px 0.2px rgba(0,0,0,0.25))"}}
@@ -11,15 +12,22 @@ const Comic = ({data}:{data:IComicList}) => {
 
   return (
     <Container>
-      <ComicImg src={data.img} />
+      <Link to={`/comic/${data.id}`}>
+        <ComicImg src={data.img} />
+      </Link>
       <Inform>
         <div>
-          <ScoreWrapper>
-            <SVG_star {...starIcon} />
-            <Score>{data.score + " / 10"}</Score>
-          </ScoreWrapper>
-          <Title>{data.title}</Title>
-          <Explane>{data.explane}</Explane>
+          <div style={{display:'flex',alignItems:'center',justifyContent: "space-between"}}>
+            <ScoreWrapper>
+              <SVG_star {...starIcon} />
+              <Score>{data.score + " / 10"}</Score>
+            </ScoreWrapper>
+            <Publish style={{backgroundColor:publish[data.publish].color}}>{publish[data.publish].text}</Publish>
+          </div>
+          <Link to={`/comic/${data.id}`}>
+            <Title>{data.title}</Title>
+            <Explane>{data.explane}</Explane>
+          </Link>
         </div>
         <div>
           <Tag>
@@ -32,7 +40,7 @@ const Comic = ({data}:{data:IComicList}) => {
           </Tag>
           <Tag>
             <SVG_shield {...InformIcon} />
-            <span style={{backgroundColor:safety[data.safety].color}} /><h2>{safety[data.safety].text}함</h2>
+            <span style={{backgroundColor:safety[data.safety].color}} /><h2>{safety[data.safety].text}</h2>
           </Tag>
         </div>
       </Inform>
@@ -92,7 +100,7 @@ const ScoreWrapper = styled.div`
 const Score = styled.h2`
   font-size: 13px;
   color:#ECD92D;
-  filter: drop-shadow(0px 0px 0.1px rgba(0,0,0,0.2));
+  filter: drop-shadow(0px 0px 0.2px rgba(0,0,0,0.25));
 `
 const Tag = styled.div`
   font-size: 12px;
@@ -118,5 +126,11 @@ const Tag = styled.div`
     border-radius: 100px;
   }
 ` 
+const Publish = styled.div`
+  font-size: 10px;
+  padding:3px 6px;
+  border-radius: 4px;
+  color:white;
+`
 
 export default Comic

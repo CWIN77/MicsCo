@@ -1,19 +1,38 @@
 export const safety = [
   {
     text:"안전",
-    color:"#2fb67e"
+    color:"#64bc26"
   },
   {
     text:"평범",
-    color:"#1264a3"
+    color:"#0071f2"
   },
   {
     text:"조심",
-    color:"#ecb22d"
+    color:"#fd9900"
   },
   {
     text:"위험",
-    color:"#e01e5a"
+    color:"#ea1601"
+  }
+]
+
+export const publish = [
+  {
+    text:"연재중",
+    color:"#0071f2"
+  },
+  {
+    text:"완결됨",
+    color:"#001833"
+  },
+  {
+    text:"휴재중",
+    color:"#fd9900"
+  },
+  {
+    text:"연중됨",
+    color:"#ea1601"
   }
 ]
 

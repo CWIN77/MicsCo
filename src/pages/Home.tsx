@@ -30,7 +30,5 @@ const Home = () => {
 const Container = styled.div`
   width:100vw;
   min-height:100vh;
-  font-size:18px;
-  font-weight: 600;
 `
 export default Home

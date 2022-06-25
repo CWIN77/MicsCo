@@ -12,6 +12,7 @@ export const getComic = /* GraphQL */ `
       safety
       genre
       score
+      publish
       createdAt
       updatedAt
     }
@@ -33,6 +34,7 @@ export const listComics = /* GraphQL */ `
         safety
         genre
         score
+        publish
         createdAt
         updatedAt
       }

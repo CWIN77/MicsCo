@@ -1,6 +1,7 @@
 import styled from 'styled-components' 
 import { Routes,Route } from 'react-router-dom'
 import Home from './pages/Home'
+import ComicDetail from './pages/ComicDetail'
 import Upload from './pages/Upload'
 
 const Container = styled.div`
@@ -13,6 +14,7 @@ function App() {
     <Container>
       <Routes>
         <Route path="/" element={<Home/>} />
+        <Route path="/comic/:id" element={<ComicDetail/>} />
         <Route path="/upload" element={<Upload/>} />
       </Routes>
     </Container>

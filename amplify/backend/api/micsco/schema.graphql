@@ -12,4 +12,5 @@ type Comic @model {
   safety: Int!
   genre: [Int!]!
   score: Float!
+  publish: Int!
 }

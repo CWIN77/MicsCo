@@ -12,6 +12,7 @@ export const onCreateComic = /* GraphQL */ `
       safety
       genre
       score
+      publish
       createdAt
       updatedAt
     }
@@ -28,6 +29,7 @@ export const onUpdateComic = /* GraphQL */ `
       safety
       genre
       score
+      publish
       createdAt
       updatedAt
     }
@@ -44,6 +46,7 @@ export const onDeleteComic = /* GraphQL */ `
       safety
       genre
       score
+      publish
       createdAt
       updatedAt
     }
