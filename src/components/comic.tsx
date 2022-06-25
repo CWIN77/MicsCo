@@ -7,7 +7,7 @@ import {IComicList} from "../types"
 import { Link } from 'react-router-dom'
 
 const Comic = ({data}:{data:IComicList}) => {
-  const starIcon = {width:15,height:15,fill:"#ECD92D",style:{padding:4,marginRight:4,filter: "drop-shadow(0px 0px 0.2px rgba(0,0,0,0.25))"}}
+  const starIcon = {width:14,height:14,fill:"#ECD92D",style:{padding:4,marginRight:4,filter: "drop-shadow(0px 0px 0.2px rgba(0,0,0,0.25))"}}
   const InformIcon = {width:15,height:15,fill:"#1A1A1A",style:{opacity:0.6,padding:2,marginRight:8}}
 
   return (
@@ -98,7 +98,7 @@ const ScoreWrapper = styled.div`
   align-items: center;
 `
 const Score = styled.h2`
-  font-size: 13px;
+  font-size: 12px;
   color:#ECD92D;
   filter: drop-shadow(0px 0px 0.2px rgba(0,0,0,0.25));
 `
