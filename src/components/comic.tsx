@@ -7,7 +7,7 @@ import {IComicList} from "../types"
 import { Link } from 'react-router-dom'
 
 const Comic = ({data}:{data:IComicList}) => {
-  const starIcon = {width:14,height:14,fill:"#ECD92D",style:{padding:4,marginRight:4,filter: "drop-shadow(0px 0px 0.2px rgba(0,0,0,0.25))"}}
+  const starIcon = {width:15,height:15,fill:"#ECD92D",style:{padding:4,marginRight:4,filter: "drop-shadow(0px 0px 0.2px rgba(0,0,0,0.25))"}}
   const InformIcon = {width:15,height:15,fill:"#1A1A1A",style:{opacity:0.6,padding:2,marginRight:8}}
 
   return (
@@ -20,7 +20,7 @@ const Comic = ({data}:{data:IComicList}) => {
           <div style={{display:'flex',alignItems:'center',justifyContent: "space-between"}}>
             <ScoreWrapper>
               <SVG_star {...starIcon} />
-              <Score>{data.score + " / 10"}</Score>
+              <Score>{data.score + " / 10"} <h2>(1)</h2></Score>
             </ScoreWrapper>
             <Publish style={{backgroundColor:publish[data.publish].color}}>{publish[data.publish].text}</Publish>
           </div>
@@ -59,8 +59,8 @@ const Container = styled.div`
 `
 const ComicImg = styled.img`
   border-radius: 8px;
-  width:calc(((100vw - 1.5rem) * 0.35) + 1px);   // 1px 여유 공간
-  height:calc((100vw - 1.5rem) * 0.35 / 7 * 10); // 7:10 비율
+  width:calc(((100vw - 1.5rem) * 0.365) + 1px);   // 1px 여유 공간
+  height:calc((100vw - 1.5rem) * 0.365 / 7 * 10); // 7:10 비율
   margin-right: 10px;
 `
 const Inform = styled.div`
@@ -68,7 +68,7 @@ const Inform = styled.div`
   flex-direction: column;
   justify-content: space-between;
   width:100%;
-  height:calc((100vw - 1.5rem) * 0.35 / 7 * 10);
+  height:calc((100vw - 1.5rem) * 0.365 / 7 * 10);
 `
 const Title = styled.h1`
   font-size: 18px;
@@ -78,14 +78,15 @@ const Title = styled.h1`
   line-height: 25px;
   overflow: hidden;
   text-overflow:ellipsis;
+  word-break: break-all;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 `
 const Explane = styled.h2`
   font-size: 13px;
-  height:calc(19px * 3);
-  line-height: 19px;
+  height:calc(18.5px * 3);
+  line-height: 18.5px;
   overflow: hidden;
   opacity: 0.6;
   font-weight: 400;
@@ -96,11 +97,19 @@ const Explane = styled.h2`
 const ScoreWrapper = styled.div`
   display:flex;
   align-items: center;
+  margin-top: 1px;
 `
 const Score = styled.h2`
-  font-size: 12px;
+  display:flex;
+  align-items: center;
+  font-size: 13px;
   color:#ECD92D;
   filter: drop-shadow(0px 0px 0.2px rgba(0,0,0,0.25));
+  h2{
+    font-size: 12px;
+    margin-left: 8px;
+    opacity: 0.6;
+  }
 `
 const Tag = styled.div`
   font-size: 12px;
@@ -110,8 +119,8 @@ const Tag = styled.div`
   height:19px;
   overflow: hidden;
   align-items: center;
-  margin: 5px 0px;
-  margin-top: 8px;
+  margin: 4px 0px;
+  margin-top: 7px;
   h2{
     font-size: 12px;
     color: #1A1A1A;
