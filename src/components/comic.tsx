@@ -3,24 +3,13 @@ import {ReactComponent as SVG_star} from "../svgs/star.svg"
 import {ReactComponent as SVG_tag} from "../svgs/tag.svg"
 import {ReactComponent as SVG_shield} from "../svgs/shield.svg"
 import {safety,genre,publish} from "./comicData"
-import {IComicList,IComic} from "../types"
+import {IComicList} from "../types"
 import { Link } from 'react-router-dom'
 
 const Comic = ({data}:{data:IComicList}) => {
   const starIcon = {width:15,height:15,fill:"#ECD92D",style:{padding:4,marginRight:4,filter: "drop-shadow(0px 0px 0.2px rgba(0,0,0,0.25))"}}
   const InformIcon = {width:15,height:15,fill:"#1A1A1A",style:{opacity:0.6,padding:2,marginRight:8}}
-  // const comicData:IComic&IComicList = {...data,
-  //   writer:"작성자 이름",
-  //   owner:"0",
-  //   publishDate:2206,
-  //   assess:[
-  //     {
-  //       owner:"1",
-  //       comment:"댓글",
-  //       score:6
-  //     }
-  //   ]
-  // }
+
   return (
     <Container>
       <Link to={`/comic/${data.id}`}>

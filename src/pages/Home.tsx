@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import TopBar from '../components/topBar'
+import TopBar from '../components/mainHeader'
 import Comic from '../components/comic'
 import {API,graphqlOperation} from "aws-amplify"
 import {listComics} from '../graphql/queries'

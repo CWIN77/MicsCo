@@ -2,13 +2,13 @@ import styled from 'styled-components'
 import {ReactComponent as SVG_search}  from "../svgs/search.svg"
 import {ReactComponent as SVG_profile} from "../svgs/profile.svg"
 import {ReactComponent as SVG_loading} from "../svgs/loading.svg"
-import {ReactComponent as SVG_menu} from "../svgs/menu.svg"
+import {ReactComponent as SVG_more_option} from "../svgs/more_option.svg"
 import { loginGoogle,getCurrentUser,logOut } from '../firebase/auth'
 import { useEffect, useState } from 'react'
 import {IUser} from "../types"
 
 const TopBar = () => {
-  const svgProps = {width:20.1,height:20.1,fill:"#1A1A1A",style:{padding:4,marginRight:12}}
+  const svgProps = {width:20,height:20.1,fill:"#1A1A1A",style:{padding:4,marginRight:8}}
   const [user,setUser] = useState<IUser|null>(JSON.parse(localStorage.getItem("user")||JSON.stringify(null)))
   const [loading,setLoading] = useState(JSON.parse(sessionStorage.getItem("loading")||JSON.stringify(false)))
   useEffect(()=>{
@@ -31,9 +31,9 @@ const TopBar = () => {
           }
         </div>
         <Title>MicsCo</Title>
-        <div style={{right:0}}>
+        <div style={{right:4}}>
           <SVG_search {...svgProps} />
-          <SVG_menu {...svgProps} />
+          <SVG_more_option {...svgProps} />
         </div>
       </Bar>
     </div>

@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import TopBar from '../components/topBar'
+import TopBar from '../components/mainHeader'
 import { useRef, useState } from 'react'
 import imageCompression from 'browser-image-compression';
 import AWS from "aws-sdk"
