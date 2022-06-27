@@ -3,16 +3,27 @@ import {ReactComponent as SVG_star} from "../svgs/star.svg"
 import {ReactComponent as SVG_tag} from "../svgs/tag.svg"
 import {ReactComponent as SVG_shield} from "../svgs/shield.svg"
 import {safety,genre,publish} from "./comicData"
-import {IComicList} from "../types"
+import {IComicList,IComic} from "../types"
 import { Link } from 'react-router-dom'
 
 const Comic = ({data}:{data:IComicList}) => {
   const starIcon = {width:15,height:15,fill:"#ECD92D",style:{padding:4,marginRight:4,filter: "drop-shadow(0px 0px 0.2px rgba(0,0,0,0.25))"}}
   const InformIcon = {width:15,height:15,fill:"#1A1A1A",style:{opacity:0.6,padding:2,marginRight:8}}
-
+  // const comicData:IComic&IComicList = {...data,
+  //   writer:"작성자 이름",
+  //   owner:"0",
+  //   publishDate:2206,
+  //   assess:[
+  //     {
+  //       owner:"1",
+  //       comment:"댓글",
+  //       score:6
+  //     }
+  //   ]
+  // }
   return (
     <Container>
-      <Link to={`/${data.id}`}>
+      <Link to={`/comic/${data.id}`}>
         <ComicImg src={data.img} />
       </Link>
       <Inform>
@@ -20,11 +31,14 @@ const Comic = ({data}:{data:IComicList}) => {
           <div style={{display:'flex',alignItems:'center',justifyContent: "space-between"}}>
             <ScoreWrapper>
               <SVG_star {...starIcon} />
-              <Score>{data.score + " / 10"} <h2>(1)</h2></Score>
+              <div>
+                <Score>{data.ownerScore + " / 10"}</Score>
+                <h3>(8)</h3>
+              </div>
             </ScoreWrapper>
-            <Publish style={{backgroundColor:publish[data.publish].color}}>{publish[data.publish].text}</Publish>
+            <Publish style={{backgroundColor:publish[data.publishInform].color}}>{publish[data.publishInform].text}</Publish>
           </div>
-          <Link to={`/${data.id}`}>
+          <Link to={`/comic/${data.id}`}>
             <Title>{data.title}</Title>
             <Explane>{data.explane}</Explane>
           </Link>
@@ -98,6 +112,15 @@ const ScoreWrapper = styled.div`
   display:flex;
   align-items: center;
   margin-top: 1px;
+  div{
+    display:flex;
+    align-items: center;
+    h3{
+      font-size: 11px;
+      margin-left: 9px;
+      opacity: 0.6;
+    }
+  }
 `
 const Score = styled.h2`
   display:flex;
@@ -105,11 +128,6 @@ const Score = styled.h2`
   font-size: 13px;
   color:#ECD92D;
   filter: drop-shadow(0px 0px 0.2px rgba(0,0,0,0.25));
-  h2{
-    font-size: 12px;
-    margin-left: 8px;
-    opacity: 0.6;
-  }
 `
 const Tag = styled.div`
   font-size: 12px;

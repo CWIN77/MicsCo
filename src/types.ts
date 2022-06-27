@@ -2,14 +2,26 @@ export interface IComicList {
   readonly id:string;
   readonly title:string;
   readonly explane:string;
-  readonly writer:string;
   readonly img:string;
   readonly safety:number;
   readonly genre:number[];
-  readonly score:number;
-  readonly publish:number;
-  readonly createdAt:string;
-  readonly updatedAt:string;
+  readonly ownerScore:number;
+  readonly publishInform:number;
+  readonly assess: {
+    readonly score:number
+  }[];
+}
+
+export interface IComic {
+  readonly writer:string;
+  readonly owner: string;
+  readonly publishDate: number;
+  readonly assess: {
+    readonly owner:string;
+    readonly comment:string;
+    readonly score:number;
+  }[];  
+  readonly createdAt?:string;
 }
 
 export interface IUser {
@@ -18,4 +30,4 @@ export interface IUser {
   readonly img:string;
 } 
 
-export type ISetState<T>= React.Dispatch<React.SetStateAction<T>> 
+export type ISetState<T>= React.Dispatch<React.SetStateAction<T>>

@@ -11,11 +11,18 @@ export const createComic = /* GraphQL */ `
       title
       explane
       writer
+      owner
+      publishDate
       img
       safety
       genre
-      score
-      publish
+      ownerScore
+      publishInform
+      assess {
+        owner
+        comment
+        score
+      }
       createdAt
       updatedAt
     }
@@ -31,11 +38,18 @@ export const updateComic = /* GraphQL */ `
       title
       explane
       writer
+      owner
+      publishDate
       img
       safety
       genre
-      score
-      publish
+      ownerScore
+      publishInform
+      assess {
+        owner
+        comment
+        score
+      }
       createdAt
       updatedAt
     }
@@ -51,11 +65,18 @@ export const deleteComic = /* GraphQL */ `
       title
       explane
       writer
+      owner
+      publishDate
       img
       safety
       genre
-      score
-      publish
+      ownerScore
+      publishInform
+      assess {
+        owner
+        comment
+        score
+      }
       createdAt
       updatedAt
     }

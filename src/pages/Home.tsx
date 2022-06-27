@@ -5,11 +5,12 @@ import {API,graphqlOperation} from "aws-amplify"
 import {listComics} from '../graphql/queries'
 import { useEffect, useState } from 'react'
 import {IComicList} from "../types"
-//tsfd
+
 const Home = () => {
   const [comicList,setComicList] = useState<IComicList[] | null>(null)
   const getComic = async ()=>{
     const req:any = await API.graphql(graphqlOperation(listComics));
+    sessionStorage.setItem("comicList",JSON.stringify(req.data.listComics.items))
     setComicList(req.data.listComics.items);
   }
   useEffect(()=>{

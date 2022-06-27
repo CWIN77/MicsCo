@@ -7,10 +7,19 @@ type Comic @model {
   id: ID!
   title: String!
   explane: String!
-  writer: ID!
+  writer: String!
+  owner: ID!
+  publishDate: Int!
   img: String!
   safety: Int!
   genre: [Int!]!
-  score: Float!
-  publish: Int!
+  ownerScore: Int!
+  publishInform: Int!
+  assess: [Assess]!
+}
+
+type Assess {
+  owner: ID!
+  comment: String!
+  score: Int!
 }

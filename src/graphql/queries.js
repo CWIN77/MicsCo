@@ -4,17 +4,15 @@
 export const getComic = /* GraphQL */ `
   query GetComic($id: ID!) {
     getComic(id: $id) {
-      id
-      title
-      explane
       writer
-      img
-      safety
-      genre
-      score
-      publish
+      owner
+      publishDate
+      assess {
+        owner
+        comment
+        score
+      }
       createdAt
-      updatedAt
     }
   }
 `;
@@ -29,14 +27,14 @@ export const listComics = /* GraphQL */ `
         id
         title
         explane
-        writer
         img
         safety
         genre
-        score
-        publish
-        createdAt
-        updatedAt
+        ownerScore
+        assess {
+          score
+        }
+        publishInform
       }
       nextToken
     }

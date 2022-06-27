@@ -14,7 +14,7 @@ function App() {
     <Container>
       <Routes>
         <Route path="/" element={<Home/>} />
-        <Route path="/:id" element={<ComicDetail/>} />
+        <Route path="/comic/:id" element={<ComicDetail/>} />
         <Route path="/upload" element={<Upload/>} />
       </Routes>
     </Container>

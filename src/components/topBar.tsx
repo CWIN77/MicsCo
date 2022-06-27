@@ -2,13 +2,14 @@ import styled from 'styled-components'
 import {ReactComponent as SVG_search}  from "../svgs/search.svg"
 import {ReactComponent as SVG_profile} from "../svgs/profile.svg"
 import {ReactComponent as SVG_loading} from "../svgs/loading.svg"
+import {ReactComponent as SVG_menu} from "../svgs/menu.svg"
 import { loginGoogle,getCurrentUser,logOut } from '../firebase/auth'
 import { useEffect, useState } from 'react'
 import {IUser} from "../types"
 
 const TopBar = () => {
   const svgProps = {width:20.1,height:20.1,fill:"#1A1A1A",style:{padding:4,marginRight:12}}
-  const [user,setUser] = useState<IUser|null>(null)
+  const [user,setUser] = useState<IUser|null>(JSON.parse(localStorage.getItem("user")||JSON.stringify(null)))
   const [loading,setLoading] = useState(JSON.parse(sessionStorage.getItem("loading")||JSON.stringify(false)))
   useEffect(()=>{
     getCurrentUser(setUser,setLoading)
@@ -18,18 +19,21 @@ const TopBar = () => {
     <div>
       <div style={{width:"100%",height:52.16}}/>
       <Bar>
-        <Title>MicsCo</Title>
-        <div>
-          <SVG_search {...svgProps} />
+        <div style={{left:10}}>
           {
             loading 
             ? <Loading/>
             : user
               ? <Profile onClick={()=>{logOut(setLoading)}} src={user.img} />
               : <div onClick={()=>{loginGoogle(setLoading)}}>
-                <SVG_profile width={24} height={24} style={{padding:4,marginRight:14}}/>
-              </div>
+                  <SVG_profile width={28} height={28} style={{padding:4,marginRight:16}}/>
+                </div>
           }
+        </div>
+        <Title>MicsCo</Title>
+        <div style={{right:0}}>
+          <SVG_search {...svgProps} />
+          <SVG_menu {...svgProps} />
         </div>
       </Bar>
     </div>
@@ -40,7 +44,7 @@ const Bar = styled.div`
   background-color: white;
   display:flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   position: fixed;
   z-index: 1;
   top:0px;
@@ -49,6 +53,7 @@ const Bar = styled.div`
   div{
     display:flex;
     align-items: center;
+    position: absolute;
   }
 `
 const Title = styled.h1`
@@ -60,14 +65,15 @@ const Profile = styled.img`
   width:28px;
   height:28px;
   margin-right:14px;
-  margin-left: 4px;
+  margin-left: 6px;
   border-radius: 100px;
 `
 const Loading = styled(SVG_loading)`
-  width:24px;
-  height:24px;
-  padding:4px;
+  width:22px;
+  height:22px;
+  padding:5px;
   margin-right:14px;
+  opacity: 0.8;
   @keyframes Loading {
     from {
       transform: rotate(0deg);
@@ -76,7 +82,7 @@ const Loading = styled(SVG_loading)`
       transform: rotate(360deg);
     }
   }
-  animation: Loading infinite 2s linear;
+  animation: Loading infinite 1s linear;
 `
 
 export default TopBar
