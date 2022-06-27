@@ -9,8 +9,11 @@ const ComicDetail = () => {
   return (
     <Container>
       <ComicHeader />
-      <ComicImg src="https://micsco.s3.ap-northeast-2.amazonaws.com/220625201234OcpW.jpg"/>
-      
+      <ComicImg src=""/>
+      <ComicInform>
+        <Title>테스트 제목</Title>
+
+      </ComicInform>
     </Container>
   )
 }
@@ -20,11 +23,18 @@ const Container = styled.div`
   min-height:100vh;
 `
 const ComicImg = styled.img`
-  padding:0.75rem;
-  padding-top: 0.25rem;
-  width:calc(100vw - 1.5rem);
-  height:calc((100vw - 1.5rem) / 7 * 10);
+  padding:0.5rem 1rem;
+  padding-bottom: 0.75rem;
+  width:calc(100vw - 2rem);
+  height:calc((100vw - 2rem) / 7 * 10);
   border-radius: 18px;
+`
+const ComicInform = styled.div`
+  padding: 0px 1.5rem;
+`
+const Title = styled.h1`
+  font-size: 24px;
+  padding: 2px 0px;
 `
 
 
