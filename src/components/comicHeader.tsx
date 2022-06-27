@@ -1,39 +1,20 @@
 import styled from 'styled-components'
-import {ReactComponent as SVG_search}  from "../svgs/search.svg"
 import {ReactComponent as SVG_profile} from "../svgs/profile.svg"
-import {ReactComponent as SVG_loading} from "../svgs/loading.svg"
-import {ReactComponent as SVG_more_option} from "../svgs/more_option.svg"
-import { loginGoogle,getCurrentUser,logOut } from '../firebase/auth'
-import { useEffect, useState } from 'react'
-import {IUser} from "../types"
+import {ReactComponent as SVG_arrow_left} from "../svgs/arrow_left.svg"
 
-const TopBar = () => {
-  const svgProps = {width:20,height:20.1,fill:"#1A1A1A",style:{padding:4,marginRight:8}}
-  const [user,setUser] = useState<IUser|null>(JSON.parse(localStorage.getItem("user")||JSON.stringify(null)))
-  const [loading,setLoading] = useState(JSON.parse(sessionStorage.getItem("loading")||JSON.stringify(false)))
-  useEffect(()=>{
-    getCurrentUser(setUser,setLoading)
-  },[])
+const ComicHeader = () => {
+  const svgProps = {width:26,height:26,fill:"#1A1A1A",style:{padding:8}}
 
   return (
     <div>
-      <div style={{width:"100%",height:52.16}}/>
+      <div style={{width:"100%",height:51.96}}/>
       <Bar>
-        <div style={{left:10}}>
-          {
-            loading 
-            ? <Loading/>
-            : user
-              ? <Profile onClick={()=>{logOut(setLoading)}} src={user.img} />
-              : <div onClick={()=>{loginGoogle(setLoading)}}>
-                  <SVG_profile width={28} height={28} style={{padding:4,marginRight:16}}/>
-                </div>
-          }
+        <div style={{position:"absolute",left:0}}>
+          <SVG_arrow_left {...svgProps} onClick={()=>{window.history.back()}} />
         </div>
-        <Title>MicsCo</Title>
-        <div style={{right:4}}>
-          <SVG_search {...svgProps} />
-          <SVG_more_option {...svgProps} />
+        <div>
+          <Profile src={"https://lh3.googleusercontent.com/a-/AOh14GhNSjWAGbrfqbT6j186QBK8iPJBQIAQzCC6EOxheQ=s96-c"} />
+          <h2>CWIN77</h2>
         </div>
       </Bar>
     </div>
@@ -49,40 +30,22 @@ const Bar = styled.div`
   z-index: 1;
   top:0px;
   width:100vw;
-  border-bottom: 1.25px solid rgba(0,0,0,0.2);
   div{
+    padding: 6px;
     display:flex;
     align-items: center;
-    position: absolute;
   }
-`
-const Title = styled.h1`
-  font-size: 22px;
-  padding:10px;
-  margin-left: 4px;
 `
 const Profile = styled.img`
-  width:28px;
-  height:28px;
-  margin-right:14px;
-  margin-left: 6px;
+  width:24px;
+  height:24px;
+  padding: 4px;
+  margin: 4px;
+  margin-right:6px;
   border-radius: 100px;
-`
-const Loading = styled(SVG_loading)`
-  width:22px;
-  height:22px;
-  padding:5px;
-  margin-right:14px;
-  opacity: 0.8;
-  @keyframes Loading {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
+  h2{
+    font-size: 16px;
   }
-  animation: Loading infinite 1s linear;
 `
 
-export default TopBar
+export default ComicHeader

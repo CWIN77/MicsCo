@@ -53,12 +53,10 @@ const Comic = ({data}:{data:IComicList}) => {
 
 const Container = styled.div`
   width:calc(100vw - 1.5rem);
-  border-bottom: 1px solid black;
   display:flex;
-  margin: 1rem 0px;
+  margin-bottom: 2rem;
   padding:0.75rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid rgba(0,0,0,0.1);
+  padding-top: 1.6rem;
 `
 const ComicImg = styled.img`
   border-radius: 8px;

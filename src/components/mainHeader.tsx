@@ -7,7 +7,7 @@ import { loginGoogle,getCurrentUser,logOut } from '../firebase/auth'
 import { useEffect, useState } from 'react'
 import {IUser} from "../types"
 
-const TopBar = () => {
+const MainHeader = () => {
   const svgProps = {width:20,height:20.1,fill:"#1A1A1A",style:{padding:4,marginRight:8}}
   const [user,setUser] = useState<IUser|null>(JSON.parse(localStorage.getItem("user")||JSON.stringify(null)))
   const [loading,setLoading] = useState(JSON.parse(sessionStorage.getItem("loading")||JSON.stringify(false)))
@@ -31,7 +31,7 @@ const TopBar = () => {
           }
         </div>
         <Title>MicsCo</Title>
-        <div style={{right:4}}>
+        <div style={{right:2}}>
           <SVG_search {...svgProps} />
           <SVG_more_option {...svgProps} />
         </div>
@@ -49,7 +49,6 @@ const Bar = styled.div`
   z-index: 1;
   top:0px;
   width:100vw;
-  border-bottom: 1.25px solid rgba(0,0,0,0.2);
   div{
     display:flex;
     align-items: center;
@@ -58,7 +57,7 @@ const Bar = styled.div`
 `
 const Title = styled.h1`
   font-size: 22px;
-  padding:10px;
+  padding:12px;
   margin-left: 4px;
 `
 const Profile = styled.img`
@@ -85,4 +84,4 @@ const Loading = styled(SVG_loading)`
   animation: Loading infinite 1s linear;
 `
 
-export default TopBar
+export default MainHeader
