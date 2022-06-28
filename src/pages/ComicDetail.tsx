@@ -15,7 +15,7 @@ const ComicDetail = () => {
   return (
     <Container>
       <ComicHeader />
-      <ComicImg src=""/>
+      <ComicImg src="https://micsco.s3.ap-northeast-2.amazonaws.com/220625201234OcpW.jpg"/>
       <ComicInform>
         <Title>테스트 제목</Title>
         <Explane>테스트 설명</Explane>
@@ -51,9 +51,71 @@ const ComicDetail = () => {
             <h2>9.5 / 10</h2>
           </div>
         </AssessTop>
-        <AssessList>
-          
-        </AssessList>
+        <Assess>
+          <div>
+            <Profile>
+              <img src="https://lh3.googleusercontent.com/a-/AOh14GhNSjWAGbrfqbT6j186QBK8iPJBQIAQzCC6EOxheQ=s96-c"/>
+              <h2>CWIN77</h2>
+            </Profile>
+            <AssessScore>
+              <SVG_star width={15} height={15} fill={"#ECD92D"} style={{padding:4,marginRight:3,filter: "drop-shadow(0px 0px 0.2px rgba(0,0,0,0.25))"}} />
+              <h2>9.5 / 10</h2>
+            </AssessScore>
+          </div>
+          <h1>댓글을 적을 부분</h1>
+        </Assess>
+        <Assess>
+          <div>
+            <Profile>
+              <img src="https://lh3.googleusercontent.com/a-/AOh14GhNSjWAGbrfqbT6j186QBK8iPJBQIAQzCC6EOxheQ=s96-c"/>
+              <h2>CWIN77</h2>
+            </Profile>
+            <AssessScore>
+              <SVG_star width={15} height={15} fill={"#ECD92D"} style={{padding:4,marginRight:3,filter: "drop-shadow(0px 0px 0.2px rgba(0,0,0,0.25))"}} />
+              <h2>9.5 / 10</h2>
+            </AssessScore>
+          </div>
+          <h1>댓글을 적을 부분</h1>
+        </Assess>
+        <Assess>
+          <div>
+            <Profile>
+              <img src="https://lh3.googleusercontent.com/a-/AOh14GhNSjWAGbrfqbT6j186QBK8iPJBQIAQzCC6EOxheQ=s96-c"/>
+              <h2>CWIN77</h2>
+            </Profile>
+            <AssessScore>
+              <SVG_star width={15} height={15} fill={"#ECD92D"} style={{padding:4,marginRight:3,filter: "drop-shadow(0px 0px 0.2px rgba(0,0,0,0.25))"}} />
+              <h2>9.5 / 10</h2>
+            </AssessScore>
+          </div>
+          <h1>댓글을 적을 부분</h1>
+        </Assess>
+        <Assess>
+          <div>
+            <Profile>
+              <img src="https://lh3.googleusercontent.com/a-/AOh14GhNSjWAGbrfqbT6j186QBK8iPJBQIAQzCC6EOxheQ=s96-c"/>
+              <h2>CWIN77</h2>
+            </Profile>
+            <AssessScore>
+              <SVG_star width={15} height={15} fill={"#ECD92D"} style={{padding:4,marginRight:3,filter: "drop-shadow(0px 0px 0.2px rgba(0,0,0,0.25))"}} />
+              <h2>9.5 / 10</h2>
+            </AssessScore>
+          </div>
+          <h1>댓글을 적을 부분</h1>
+        </Assess>
+        <Assess>
+          <div>
+            <Profile>
+              <img src="https://lh3.googleusercontent.com/a-/AOh14GhNSjWAGbrfqbT6j186QBK8iPJBQIAQzCC6EOxheQ=s96-c"/>
+              <h2>CWIN77</h2>
+            </Profile>
+            <AssessScore>
+              <SVG_star width={15} height={15} fill={"#ECD92D"} style={{padding:4,marginRight:3,filter: "drop-shadow(0px 0px 0.2px rgba(0,0,0,0.25))"}} />
+              <h2>9.5 / 10</h2>
+            </AssessScore>
+          </div>
+          <h1>댓글을 적을 부분</h1>
+        </Assess>
       </ComicInform>
     </Container>
   )
@@ -65,7 +127,7 @@ const Container = styled.div`
 `
 const ComicImg = styled.img`
   padding:0.5rem 1rem;
-  padding-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
   width:calc(100vw - 2rem);
   height:calc((100vw - 2rem) / 7 * 10);
   border-radius: 18px;
@@ -86,9 +148,9 @@ const Explane = styled.h2`
 `
 const TagContainer = styled.div`
   display:flex;
-  align-items: center;
-  padding-top: 10px;
-  padding-bottom: 12px;
+  overflow: auto;
+  padding-top: 2px;
+  padding-bottom: 16px;
 `
 const Tag = styled.div`
   opacity: 0.6;
@@ -96,15 +158,17 @@ const Tag = styled.div`
   align-items: center;
   margin-right: 25px;
   h2{
+    white-space: nowrap;
     margin-left: 9px;
     font-size: 13px;
   }
 `
 const AssessTop = styled.div`
   display:flex;
-  margin-top: 36px;
+  margin-top: 28px;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 8px;
   h2{
     font-size: 18px;
   }
@@ -113,17 +177,47 @@ const AssessTop = styled.div`
     align-items: center;
     h2{
       font-weight: 400;
-      font-size: 16px;
+      font-size: 17px;
       color:#ECD92D;
       filter: drop-shadow(0px 0px 0.2px rgba(0,0,0,0.25));
     }
   }
 `
-const AssessList = styled.div`
+const Assess = styled.div`
   display:flex;
   flex-direction: column;
+  margin: 1.2rem 2px;
+  div{
+    display:flex;
+    align-items: center;
+  }
+  h1{
+    margin-top: 12px;
+    opacity: 0.8;
+    font-size: 15px;
+  }
 `
-
-
+const Profile = styled.div`
+  display:flex;
+  margin-right: 18px;
+  img{
+    width:17px;
+    height:17px;
+    border-radius: 100px;
+  }
+  h2{
+    font-size: 12px;
+    margin-left: 6px;
+    opacity: 0.8;
+  }
+`
+const AssessScore = styled.div`
+  h2{
+    font-size: 12px;
+    font-weight: 400;
+    color:#ECD92D;
+    filter: drop-shadow(0px 0px 0.2px rgba(0,0,0,0.25));
+  }
+`
 
 export default ComicDetail
