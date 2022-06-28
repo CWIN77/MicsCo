@@ -10,8 +10,8 @@ import {ReactComponent as SVG_star} from "../svgs/star.svg"
 
 const ComicDetail = () => {
   const {id} = useParams();
-  const iconProps = {width:20,height:20,fill:"#1A1A1A"}
-  const starIcon = {width:20,height:20,fill:"#ECD92D",style:{padding:4,marginRight:6,filter: "drop-shadow(0px 0px 0.2px rgba(0,0,0,0.25))"}}
+  const iconProps = {width:16,height:16,fill:"#1A1A1A"}
+  const starIcon = {width:18,height:18,fill:"#ECD92D",style:{padding:4,marginRight:6,filter: "drop-shadow(0px 0px 0.2px rgba(0,0,0,0.25))"}}
   return (
     <Container>
       <ComicHeader />
@@ -52,7 +52,7 @@ const ComicDetail = () => {
           </div>
         </AssessTop>
         <AssessList>
-
+          
         </AssessList>
       </ComicInform>
     </Container>
@@ -75,17 +75,18 @@ const ComicInform = styled.div`
   padding: 0px 1.5rem;
 `
 const Title = styled.h1`
-  font-size: 24px;
+  font-size: 22px;
   padding: 2px 0px;
 `
 const Explane = styled.h2`
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 400;
   opacity: 0.8;
   margin-bottom: 30px;
 `
 const TagContainer = styled.div`
   display:flex;
+  align-items: center;
   padding-top: 10px;
   padding-bottom: 12px;
 `
@@ -93,10 +94,10 @@ const Tag = styled.div`
   opacity: 0.6;
   display:flex;
   align-items: center;
-  margin-right: 24px;
+  margin-right: 25px;
   h2{
-    margin-left: 10px;
-    font-size: 15px;
+    margin-left: 9px;
+    font-size: 13px;
   }
 `
 const AssessTop = styled.div`
@@ -105,14 +106,14 @@ const AssessTop = styled.div`
   align-items: center;
   justify-content: space-between;
   h2{
-    font-size: 20px;
+    font-size: 18px;
   }
   div{
     display:flex;
     align-items: center;
     h2{
       font-weight: 400;
-      font-size: 18px;
+      font-size: 16px;
       color:#ECD92D;
       filter: drop-shadow(0px 0px 0.2px rgba(0,0,0,0.25));
     }

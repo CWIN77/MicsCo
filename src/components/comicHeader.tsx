@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import {ReactComponent as SVG_arrow_left} from "../svgs/arrow_left.svg"
 
 const ComicHeader = () => {
-  const svgProps = {width:26,height:26,fill:"#1A1A1A",style:{padding:8}}
+  const svgProps = {width:28,height:28,fill:"#1A1A1A",style:{padding:8}}
 
   return (
     <Bar>
