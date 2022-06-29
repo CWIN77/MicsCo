@@ -11,7 +11,7 @@ import {ReactComponent as SVG_star} from "../svgs/star.svg"
 const ComicDetail = () => {
   const {id} = useParams();
   const iconProps = {width:16,height:16,fill:"#1A1A1A"}
-  const starIcon = {width:18,height:18,fill:"#ECD92D",style:{padding:4,marginRight:6,filter: "drop-shadow(0px 0px 0.2px rgba(0,0,0,0.25))"}}
+  const starIcon = {width:18,height:18,fill:"#ECD92D",style:{padding:2,marginRight:5,filter: "drop-shadow(0px 0px 0.2px rgba(0,0,0,0.5))"}}
   return (
     <Container>
       <ComicHeader />
@@ -44,7 +44,8 @@ const ComicDetail = () => {
             <h2>신도 마사유키</h2>
           </Tag>
         </TagContainer>
-        <AssessTop>
+      </ComicInform>
+      <AssessTop>
           <h2>평가</h2>
           <div>
             <SVG_star {...starIcon} />
@@ -53,70 +54,24 @@ const ComicDetail = () => {
         </AssessTop>
         <Assess>
           <div>
-            <Profile>
-              <img src="https://lh3.googleusercontent.com/a-/AOh14GhNSjWAGbrfqbT6j186QBK8iPJBQIAQzCC6EOxheQ=s96-c"/>
-              <h2>CWIN77</h2>
-            </Profile>
-            <AssessScore>
-              <SVG_star width={15} height={15} fill={"#ECD92D"} style={{padding:4,marginRight:3,filter: "drop-shadow(0px 0px 0.2px rgba(0,0,0,0.25))"}} />
+            <AssessInform>
+              <SVG_star width={15} height={15} fill={"#ECD92D"} style={{padding:2,marginRight:3,filter: "drop-shadow(0px 0px 0.2px rgba(0,0,0,0.5))"}} />
               <h2>9.5 / 10</h2>
-            </AssessScore>
+              <h3>CWIN77</h3>
+            </AssessInform>
           </div>
-          <h1>댓글을 적을 부분</h1>
+          <AssessComment>댓글을 적을 부분</AssessComment>
         </Assess>
         <Assess>
           <div>
-            <Profile>
-              <img src="https://lh3.googleusercontent.com/a-/AOh14GhNSjWAGbrfqbT6j186QBK8iPJBQIAQzCC6EOxheQ=s96-c"/>
-              <h2>CWIN77</h2>
-            </Profile>
-            <AssessScore>
-              <SVG_star width={15} height={15} fill={"#ECD92D"} style={{padding:4,marginRight:3,filter: "drop-shadow(0px 0px 0.2px rgba(0,0,0,0.25))"}} />
+            <AssessInform>
+              <SVG_star width={14} height={14} fill={"#ECD92D"} style={{padding:2,marginRight:3,filter: "drop-shadow(0px 0px 0.2px rgba(0,0,0,0.5))"}} />
               <h2>9.5 / 10</h2>
-            </AssessScore>
+              <h3>CWIN77</h3>
+            </AssessInform>
           </div>
-          <h1>댓글을 적을 부분</h1>
+          <AssessComment>댓글을 적을 부분</AssessComment>
         </Assess>
-        <Assess>
-          <div>
-            <Profile>
-              <img src="https://lh3.googleusercontent.com/a-/AOh14GhNSjWAGbrfqbT6j186QBK8iPJBQIAQzCC6EOxheQ=s96-c"/>
-              <h2>CWIN77</h2>
-            </Profile>
-            <AssessScore>
-              <SVG_star width={15} height={15} fill={"#ECD92D"} style={{padding:4,marginRight:3,filter: "drop-shadow(0px 0px 0.2px rgba(0,0,0,0.25))"}} />
-              <h2>9.5 / 10</h2>
-            </AssessScore>
-          </div>
-          <h1>댓글을 적을 부분</h1>
-        </Assess>
-        <Assess>
-          <div>
-            <Profile>
-              <img src="https://lh3.googleusercontent.com/a-/AOh14GhNSjWAGbrfqbT6j186QBK8iPJBQIAQzCC6EOxheQ=s96-c"/>
-              <h2>CWIN77</h2>
-            </Profile>
-            <AssessScore>
-              <SVG_star width={15} height={15} fill={"#ECD92D"} style={{padding:4,marginRight:3,filter: "drop-shadow(0px 0px 0.2px rgba(0,0,0,0.25))"}} />
-              <h2>9.5 / 10</h2>
-            </AssessScore>
-          </div>
-          <h1>댓글을 적을 부분</h1>
-        </Assess>
-        <Assess>
-          <div>
-            <Profile>
-              <img src="https://lh3.googleusercontent.com/a-/AOh14GhNSjWAGbrfqbT6j186QBK8iPJBQIAQzCC6EOxheQ=s96-c"/>
-              <h2>CWIN77</h2>
-            </Profile>
-            <AssessScore>
-              <SVG_star width={15} height={15} fill={"#ECD92D"} style={{padding:4,marginRight:3,filter: "drop-shadow(0px 0px 0.2px rgba(0,0,0,0.25))"}} />
-              <h2>9.5 / 10</h2>
-            </AssessScore>
-          </div>
-          <h1>댓글을 적을 부분</h1>
-        </Assess>
-      </ComicInform>
     </Container>
   )
 }
@@ -165,10 +120,10 @@ const Tag = styled.div`
 `
 const AssessTop = styled.div`
   display:flex;
-  margin-top: 28px;
+  margin-top: 20px;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 8px;
+  padding: 8px 1.5rem;
   h2{
     font-size: 18px;
   }
@@ -186,38 +141,32 @@ const AssessTop = styled.div`
 const Assess = styled.div`
   display:flex;
   flex-direction: column;
-  margin: 1.2rem 2px;
+  padding: 1rem 1.6rem;
+  margin: 1.25rem 0rem;
+  padding-top: 2rem;
+  border-top: 2px solid #eaeaea;
   div{
     display:flex;
     align-items: center;
   }
-  h1{
-    margin-top: 12px;
-    opacity: 0.8;
-    font-size: 15px;
-  }
 `
-const Profile = styled.div`
-  display:flex;
-  margin-right: 18px;
-  img{
-    width:17px;
-    height:17px;
-    border-radius: 100px;
-  }
+const AssessInform = styled.div`
   h2{
-    font-size: 12px;
-    margin-left: 6px;
-    opacity: 0.8;
-  }
-`
-const AssessScore = styled.div`
-  h2{
-    font-size: 12px;
+    font-size: 13.5px;
     font-weight: 400;
     color:#ECD92D;
-    filter: drop-shadow(0px 0px 0.2px rgba(0,0,0,0.25));
+    margin-left: 3px;
+    filter: drop-shadow(0px 0px 0.2px rgba(0,0,0,0.5));
   }
+  h3{
+    font-size: 13px;
+    opacity: 0.5;
+    margin-left: 16px;
+  }
+`
+const AssessComment = styled.h1`
+  margin-top: 12px;
+  font-size: 16px;
 `
 
 export default ComicDetail

@@ -29,20 +29,17 @@ const Bar = styled.div`
     display:flex;
     align-items: center;
     h2{
-      font-size: 16px;
+      font-size: 15px;
     }
   }
 `
 const Profile = styled.img`
-  width:24px;
-  height:24px;
+  width:22px;
+  height:22px;
   padding: 4px;
   margin: 4px;
   margin-right:6px;
   border-radius: 100px;
-  h2{
-    font-size: 16px;
-  }
 `
 
 export default ComicHeader
